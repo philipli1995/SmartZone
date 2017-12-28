@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/first_group">
+
+        <item
+            android:id="@+id/item_download"
+            android:checkable="true"
+            android:title="@string/item_download"
+            android:icon="@drawable/ic_file_download_black_24dp"/>
+
+        <item
+            android:id="@+id/item_github"
+            android:checkable="true"
+            android:title="@string/item_github"
+            android:icon="@drawable/ic_home_black_24dp"/>
+        <item
+            android:id="@+id/item_author"
+            android:checkable="true"
+            android:title="@string/item_author"
+            android:icon="@drawable/ic_people_black_24dp"></item>
+
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/item_exit"
+            android:checkable="true"
+            android:title="@string/item_quit"
+            android:icon="@drawable/ic_keyboard_return_black_24dp"/>
+    </group>
+
+
+
+</menu>

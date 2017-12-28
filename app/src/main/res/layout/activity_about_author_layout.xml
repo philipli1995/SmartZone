@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="enterAlways|scroll"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ToolbarStyle"
+            />
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_logo"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_version_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="当前版本  V0.9.0 "
+        android:textColor="@color/subtitle_text"
+        android:textSize="13sp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/corner_text_bg"
+        android:lineSpacingExtra="2dp"
+        android:padding="12dp"
+        android:text="@string/about_author"
+        android:textColor="#666666"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_blog"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="12dp"
+            android:textSize="16sp"
+            android:textColor="@color/title_text"
+            android:clickable="true"
+            android:text="个人博客" />
+
+        <View
+            style="@style/horizontalLine"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/tv_github"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="12dp"
+            android:textSize="16sp"
+            android:textColor="@color/title_text"
+            android:clickable="true"
+            android:text="Github" />
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

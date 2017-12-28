@@ -1,0 +1,216 @@
+<resources>
+
+    <string-array name="book_tabs">
+        <item>@string/book_all</item>
+        <item>@string/book_culture</item>
+        <item>@string/book_art</item>
+        <item>@string/book_tech</item>
+        <item>@string/book_magazine</item>
+        <item>@string/book_tradition</item>
+    </string-array>
+
+    <string-array name="home_tabs">
+
+        <item>@string/home_book</item>
+        <item>@string/home_mm</item>
+        <item>@string/home_news</item>
+
+    </string-array>
+
+
+
+    <string-array name="news_tabs">
+        <!--新闻名字和id、type一一对应-->
+        <item>@string/news_headline</item>
+        <item>@string/news_tech</item>
+        <item>@string/news_eco</item>
+    </string-array>
+
+    <string-array name="news_api_id">
+
+        <item>T1348647909107</item>
+        <item>T1348649580692</item>
+        <item>T1348648756099</item>
+
+    </string-array>
+
+    <string-array name="news_api_type">
+
+        <item>headline</item>
+        <item>list</item>
+        <item>list</item>
+
+    </string-array>
+
+
+
+
+
+
+    <string name="news_headline">头条</string>
+    <string name="news_tech">科技</string>
+    <string name="news_eco">财经</string>
+
+
+    <string name="home_book">看书</string>
+    <string name="home_mm">MM</string>
+    <string name="home_news">新闻</string>
+
+    <string name="book_culture">文化</string>
+    <string name="book_art">文学</string>
+    <string name="book_all">综合</string>
+    <string name="book_tech">科技</string>
+    <string name="book_magazine">杂志</string>
+    <string name="book_tradition">传统</string>
+    <string name="more_info">正在加载中...</string>
+
+
+    <string name="app_name">SmartZone</string>
+    <string name="login_hint_account">请输入您的用户名</string>
+    <string name="login_hint_password">请输入您的密码</string>
+
+    <string name="login_title">登录</string>
+
+
+    <string name="item_download">扫码下载</string>
+    <string name="item_github">Github主页</string>
+    <string name="item_author">关于作者</string>
+    <string name="item_quit">退出</string>
+
+
+    <string name="about_author">感谢使用SmartZone，如果您觉得喜欢的话欢迎在github上给一个star，如果有问题或建议请在主页留言，您的支持就是我最大的动力！\nPhilip Li</string>
+
+
+    <string name="tab_live">直播</string>
+    <string name="tab_recommend">推荐</string>
+    <string name="tab_bangumi">番剧</string>
+    <string name="tab_more">分区</string>
+    <string name="tab_focus">关注</string>
+    <string name="tab_discover">发现</string>
+    <string name="topic">话题</string>
+    <string name="rank">排行榜</string>
+    <string name="home_tab_more">更多</string>
+    <string name="look_more">查看更多</string>
+    <string name="change_recommend">换一拨推荐</string>
+
+    <string name="login_level">LV5</string>
+    <string name="login_name">Philipli1995</string>
+    <string name="login_vip">正式会员</string>
+    <string name="login_coin">硬币 : 1000.00</string>
+    <string name="login_b_coin">B币 : 0.0</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+
+
+
+    <string name="info_play_times_format">%d</string>
+    <string name="info_reviews_format">%d</string>
+    <string name="hotbitmapgg">hotBitmapGG</string>
+    <string name="github_link">https://github.com/HotBitmapGG</string>
+    <string name="sina_weibo_link">新浪微博:http://m.weibo.cn/users/3223089177/qq</string>
+    <string name="jianshu_link">简书:http://www.jianshu.com/notebooks/5181955/latest</string>
+    <string name="add_follow">+关注</string>
+    <string name="login">登录</string>
+    <string name="all_start">全部开始</string>
+    <string name="edit">编辑</string>
+    <string name="sp_play">播放:</string>
+    <string name="sp_total_of">共:</string>
+    <string name="sp_follow">关注:</string>
+    <string name="sp_collection">收藏:</string>
+    <string name="sp_introduction">专题简介:</string>
+    <string name="sp_videos">专题剧集</string>
+    <string name="discover_search_hint">搜索视频 番剧 up主或av号</string>
+    <string name="everyone_in_the_search">大家都在搜</string>
+    <string name="interest_in_circle">兴趣圈</string>
+    <string name="topic_center">话题中心</string>
+    <string name="original_rank">原创排行榜</string>
+    <string name="all_rank">全区排行榜</string>
+    <string name="shop">周边商城</string>
+    <string name="game_center">游戏中心</string>
+    <string name="check_update">检查更新</string>
+    <string name="logout">退出登录</string>
+    <string name="introduction">简介</string>
+    <string name="coin">投硬币</string>
+    <string name="collection">收藏</string>
+    <string name="bangumi_follow">追番</string>
+    <string name="cache">缓存</string>
+    <string name="charging">请赐予我电量吧 !</string>
+    <string name="charg">充电</string>
+    <string name="more_charging">更多电量,更多灵感哟  o(*≧▽≦)ツ</string>
+    <string name="video_about">视频相关</string>
+    <string name="more">更多</string>
+    <string name="download">下载</string>
+    <string name="to_them">追番</string>
+    <string name="time_line">放送表</string>
+    <string name="index">索引</string>
+    <string name="bangumi_recommend">番剧推荐</string>
+    <string name="new_bangumi_serial">新番连载</string>
+    <string name="season_new_bangumi">7月新番</string>
+    <string name="season_list">分季列表</string>
+    <string name="more_new_bangumi_serial">所有连载</string>
+    <string name="load_more">加载中…</string>
+    <string name="search_hint">搜索视频,番剧,up主或av号</string>
+    <string name="danmaku_switch">弹幕开</string>
+    <string name="play_immediately">立即播放</string>
+    <string name="dynamic">动态</string>
+    <string name="not_watch">尚未观看</string>
+    <string name="selection">选集</string>
+    <string name="please_contract_me">请承包我吧</string>
+    <string name="have_been_contracting_out_of_me">已有383人承包了这部番</string>
+    <string name="contract">承包</string>
+    <string name="contract_text">等34人七日内承包了这部番</string>
+    <string name="look_top_list">查看榜单</string>
+    <string name="commend">评论</string>
+    <string name="more_commend">更多评论</string>
+    <string name="more_commend_arrow">更多评论 >></string>
+    <string name="members">正式会员</string>
+    <string name="more_hot_comment">更多热门评论 >></string>
+    <string name="fans">粉丝</string>
+    <string name="direct_messages">私信</string>
+    <string name="live_message">TA现在还没有直播，去订阅TA的直播</string>
+    <string name="go_to_look">进去看看</string>
+    <string name="all_contribute">全部投稿</string>
+    <string name="coins_video">最近投硬币的视频</string>
+    <string name="ta_favorites">TA的收藏夹</string>
+    <string name="ta_chase_bangumi">TA的追番</string>
+    <string name="ta_quanzi">TA的圈子</string>
+    <string name="ta_play_game">TA玩的游戏</string>
+
+
+    <string name="video_init">初始化播放器…</string>
+    <string name="video_loading">加载中…</string>
+    <string name="video_error_title">Cannot play video</string>
+    <string name="video_error_text_invalid_progressive_playback">Sorry, this video is not valid for streaming tothis device.</string>
+    <string name="video_error_text_unknown">Sorry, this video cannot be played.</string>
+    <string name="video_error_button">OK</string>
+
+
+    <!-- Navigation Items -->
+    <string name="item_group">关注的人</string>
+    <string name="item_tracker">我的钱包</string>
+    <string name="item_downloaded">离线缓存</string>
+    <string name="item_settings">设置与帮助</string>
+    <string name="item_theme">主题选择</string>
+    <string name="item_app">应用推荐</string>
+    <string name="item_vip">我的大会员</string>
+
+
+    <!--App 介绍-->
+    <string name="about_user_head_layout">硬币: 47</string>
+    <string name="about_introduce">「哔哩哔哩」</string>
+    <string name="about_menu_action_share">分享</string>
+    <string name="about_developers">关于我</string>
+    <string name="about">关于哔哩哔哩</string>
+    <string name="about_version">V1.0</string>
+
+
+    <!--哔哩哔哩-->
+    <string name="section_recommend">推荐</string>
+    <string name="section_live">直播</string>
+    <string name="section_focus">关注</string>
+    <string name="section_more">分区</string>
+    <string name="section_bangumi">番剧</string>
+    <string name="section_discover">发现</string>
+    <string name="level_text">LV2</string>
+
+</resources>

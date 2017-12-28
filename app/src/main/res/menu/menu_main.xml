@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/book_btn"
+        android:title="读书"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_book_white_24dp"
+        />
+    <item
+        android:id="@+id/news_btn"
+        android:title="新闻"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_chrome_reader_mode_white_24dp"
+        />
+    <item
+        android:id="@+id/mm_btn"
+        android:title="图片"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_mms_white_24dp"
+        />
+
+</menu>

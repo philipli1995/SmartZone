@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:elevation="@dimen/app_bar_elevation">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="63dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:textSize="16sp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/splash_logo_margin">
+
+
+        <ImageView
+            android:id="@+id/ic_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/default_tiny_padding"
+            app:srcCompat="@drawable/ic_logo" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_general_margin"
+        android:layout_marginRight="@dimen/default_general_margin"
+        android:layout_marginTop="@dimen/default_grow_margin"
+        android:background="@drawable/login_input_rounded_bg"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/action_bar_default_height"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/enter_username"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/default_general_margin"
+                android:layout_marginStart="@dimen/default_general_margin"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_login_username_default"
+                android:drawablePadding="@dimen/default_general_margin"
+                android:drawableStart="@drawable/ic_login_username_default"
+                android:ellipsize="start"
+                android:hint="@string/login_hint_account"
+                android:inputType="textVisiblePassword"
+                android:singleLine="true"
+                android:textColor="@color/black_80"
+                android:textColorLink="@color/gray_20"
+                android:textSize="@dimen/default_medium_text_size"></EditText>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/delete_username"
+                android:background="@android:color/transparent"
+                android:paddingRight="@dimen/default_general_margin"
+                android:paddingEnd="@dimen/default_general_margin"
+                android:paddingLeft="@dimen/default_grow_margin"
+                android:paddingStart="@dimen/default_grow_margin"
+                android:src="@drawable/ic_edittext_clear"
+                ></ImageButton>
+
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_height"
+            android:background="@color/line_bg"></View>
+
+        <EditText
+            android:id="@+id/enter_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/action_bar_default_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/default_small_padding"
+            android:layout_marginStart="@dimen/default_small_padding"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_login_password_default"
+            android:drawablePadding="@dimen/default_general_margin"
+            android:drawableStart="@drawable/ic_login_password_default"
+            android:hint="@string/login_hint_password"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColorHint="@color/gray_20"
+            android:textSize="@dimen/default_medium_text_size"></EditText>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_general_margin"
+        android:layout_marginRight="@dimen/default_general_margin"
+        android:layout_marginBottom="@dimen/default_general_margin"
+        android:layout_marginTop="@dimen/default_long_margin"
+        android:background="@drawable/corner_btn"
+        android:gravity="center"
+        android:text="@string/login_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/default_medium_text_size"
+
+        ></Button>
+
+
+</LinearLayout>
