@@ -14,12 +14,12 @@ An Android client using Gank.Io， douban API and netease news. The reading clas
 ## Screenshots
 
 
-<img width="173" height=“274” src="https://github.com/philipli1995/SmartZone/blob/master/image/page_book_list.jpg"></img>
-<img width="173" height=“274” src="https://github.com/philipli1995/SmartZone/blob/master/image/page_download.jpg"></img>
-<img width="173" height=“274” src="https://github.com/philipli1995/SmartZone/blob/master/image/page_news.jpg"></img>
-<img width="173" height=“274” src="https://github.com/philipli1995/SmartZone/blob/master/image/page_news_list.jpg"></img>
-<img width="173" height=“274” src="https://github.com/philipli1995/SmartZone/blob/master/image/page_nav_bar.jpg"></img>
-<img width="173" height=“274” src="https://github.com/philipli1995/SmartZone/blob/master/image/page_meizi.jpg"></img>
+<img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_book_list.jpg"></img>
+<img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_download.jpg"></img>
+<img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_news.jpg"></img>
+<img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_news_list.jpg"></img>
+<img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_nav_bar.jpg"></img>
+<img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_meizi.jpg"></img>
 
 ## Issues 宝贵意见
 如果有任何问题，请到github的[issue处][11]写上你不明白的地方,我会及时给予帮助。
@@ -43,7 +43,7 @@ If you have any questions, please write to [the issue][11] of making you don't u
 
 
 ### Download
-　[下载页面](https://fir.im/cloudreader) 
+　[下载页面](https://fir.im/SmartZone)
 　
 
 ### Version
