@@ -82,7 +82,7 @@ public class NewsAdapter extends RecyclerView.Adapter {
                 newsViewHolder.setAuthor(mList.get(position).getSource());
                 newsViewHolder.setTime(mList.get(position).getPtime());
 
-                newsViewHolder.setOnClickListener(mList.get(position).getPostid(), mList.get(position).getImgsrc());
+                newsViewHolder.setOnClickListener(mList.get(position).getPostid());
 
             }
         }
@@ -151,10 +151,9 @@ public class NewsAdapter extends RecyclerView.Adapter {
                     .into(image);
         }
 
-        public void setOnClickListener(String id, String img) {
+        public void setOnClickListener(String id) {
 
-            //待实现
-            view.setOnClickListener(aLong-> NewsDetailActivity.start(mContext, id, img));
+            view.setOnClickListener(aLong-> NewsDetailActivity.start(mContext, id, image));
 
         }
 

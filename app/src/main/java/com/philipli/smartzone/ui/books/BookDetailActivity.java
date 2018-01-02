@@ -1,11 +1,15 @@
 package com.philipli.smartzone.ui.books;
 
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.transition.ArcMotion;
@@ -22,6 +26,7 @@ import com.philipli.smartzone.R;
 import com.philipli.smartzone.base.RxBaseActivity;
 import com.philipli.smartzone.bean.BookDetailBean;
 import com.philipli.smartzone.network.RetrofitConfig;
+import com.philipli.smartzone.util.BitmapUtil;
 import com.philipli.smartzone.util.GlideUtil;
 import com.philipli.smartzone.widget.CustomChangeBounds;
 
@@ -41,6 +46,7 @@ public class BookDetailActivity extends RxBaseActivity {
 
 
     private static final String INTENT_NAME = "id";
+    private static final String INTENT_IMG = "img";
     @BindView(R.id.book_image)
     ImageView mBookImage;
     @BindView(R.id.author)
@@ -66,6 +72,8 @@ public class BookDetailActivity extends RxBaseActivity {
 
     private String id;
     private BookDetailBean bookBean;
+
+    private Bitmap bookImage;
 
 
     @Override
@@ -100,7 +108,11 @@ public class BookDetailActivity extends RxBaseActivity {
     @Override
     public void initViews(Bundle savedInstanceState) {
 
-        id = (String) getIntent().getSerializableExtra(INTENT_NAME);
+        Bundle bundle = getIntent().getExtras();
+
+        id = bundle.getString(INTENT_NAME);
+        bookImage = (Bitmap) bundle.getParcelable(INTENT_IMG);
+        mBookImage.setImageBitmap(bookImage);
 
         loadData();
 
@@ -141,11 +153,6 @@ public class BookDetailActivity extends RxBaseActivity {
         mToolBar.setSubtitle(mAuthor.getText());
 
 
-        Glide.with(this)
-                .load(bookBean.getImages().getLarge())
-                .apply(GlideUtil.getRequestOptions())
-                .transition(withCrossFade(500))
-                .into(mBookImage);
 
         Glide.with(this)
                 .load(bookBean.getImages().getLarge())
@@ -155,12 +162,25 @@ public class BookDetailActivity extends RxBaseActivity {
 
     }
 
-    public static void start(Context context, String id) {
+    public static void start(Context context, String id, ImageView imageView) {
 
         Intent intent = new Intent(context, BookDetailActivity.class);
-        intent.putExtra(INTENT_NAME, id);
-        ActivityCompat.startActivity(context, intent, null);
+        Bundle bundle = new Bundle();
+
+        bundle.putString(INTENT_NAME, id);
+        Bitmap bitmap = BitmapUtil.drawable2Bitmap(imageView.getDrawable());
+        bundle.putParcelable(INTENT_IMG, bitmap);
+        intent.putExtras(bundle);
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, imageView, context.getString(R.string.anime_books_badger));
+        ActivityCompat.startActivity(context, intent, options.toBundle());
     }
 
+
+    @Override
+    protected void onDestroy() {
+        mBookImage.setImageBitmap(null);
+        BitmapUtil.bitmapRecycle(bookImage);
+        super.onDestroy();
+    }
 }
 

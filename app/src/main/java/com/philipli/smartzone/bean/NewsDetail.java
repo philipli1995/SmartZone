@@ -297,6 +297,10 @@ public class NewsDetail {
         return body;
     }
 
+    public void setBody(String body) {
+        this.body = body;
+    }
+
     public int getReplyCount() {
         return replyCount;
     }

@@ -139,7 +139,7 @@ public class BookAdapter extends RecyclerView.Adapter {
 
         public void setOnClickListener(String id) {
 
-            image.setOnClickListener(aLong-> BookDetailActivity.start(mContext, id));
+            image.setOnClickListener(aLong-> BookDetailActivity.start(mContext, id, image));
 
         }
 

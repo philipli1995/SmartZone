@@ -18,6 +18,7 @@
             android:id="@+id/book_image"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitXY"
+            android:transitionName="@string/anime_books_badger"
             />
 
     </FrameLayout>

@@ -67,7 +67,7 @@
                         android:id="@+id/book_image"
                         android:layout_width="@dimen/book_detail_width"
                         android:layout_height="@dimen/book_detail_height"
-
+                        android:transitionName="@string/anime_books_badger"
                         android:contentDescription="TODO"
                         android:src="@drawable/ic_image_loading" />
 
@@ -196,7 +196,7 @@
                     <View
                         android:layout_width="45dp"
                         android:layout_height="2dp"
-                        android:background="@color/colorPrimary"></View>
+                        android:background="@color/colorPrimary"/>
 
                 </LinearLayout>
 

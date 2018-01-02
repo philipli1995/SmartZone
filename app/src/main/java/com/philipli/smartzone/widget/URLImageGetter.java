@@ -68,13 +68,16 @@ public class URLImageGetter implements Html.ImageGetter {
                     public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
                         int x = resource.getWidth();
                         int y = resource.getHeight();
-                        if (x > actX) {
-                            //进行等比例缩放程序
-                            Matrix matrix = new Matrix();
-                            matrix.postScale((float) (actX * 1.00 / x), (float) (actX * 1.00 / x));
-                            //长和宽放大缩小的比例
-                            resource = Bitmap.createBitmap(resource, 0, 0, x, y, matrix, true);
-                        }
+                        // 由于不稳定产生错误暂时注掉
+//                        if (x > actX) {
+//                            //进行等比例缩放程序2
+//                            Matrix matrix = new Matrix();
+//                            matrix.postScale((float) (actX * 1.00 / x), (float) (actX * 1.00 / x));
+//                            DebugUtil.debug("x",x+"");
+//                            DebugUtil.debug("y",y+"");
+//                            //长和宽放大缩小的比例
+//                            resource = Bitmap.createBitmap(resource, 0, 0, x, y, matrix, true);
+//                        }
                         urlDrawable.bitmap = resource;
                         urlDrawable.setBounds(0, 0, resource.getWidth(), resource.getHeight());
                         mTextView.invalidate();

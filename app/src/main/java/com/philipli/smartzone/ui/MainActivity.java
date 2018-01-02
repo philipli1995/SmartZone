@@ -87,13 +87,17 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_download:
-                WebViewActivity.start(this, "Test", "https://github.com/login");
+//                WebViewActivity.start(this, "扫码下载", "https://fir.im/SmartZone");
+                QRCodeActivity.start(this);
                 break;
             case R.id.item_exit:
                 finish();
                 break;
             case R.id.item_author:
                 AboutAuthorActivity.start(this);
+                break;
+            case R.id.item_github:
+                WebViewActivity.start(this, "Github主页", "https://github.com/philipli1995/SmartZone");
                 break;
             default:
                 break;

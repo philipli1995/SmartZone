@@ -1,13 +1,18 @@
 package com.philipli.smartzone.ui.news;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +22,7 @@ import com.philipli.smartzone.base.RxBaseActivity;
 import com.philipli.smartzone.bean.BookDetailBean;
 import com.philipli.smartzone.bean.NewsDetail;
 import com.philipli.smartzone.network.RetrofitConfig;
+import com.philipli.smartzone.util.BitmapUtil;
 import com.philipli.smartzone.util.GlideUtil;
 import com.philipli.smartzone.widget.URLImageGetter;
 
@@ -54,8 +60,8 @@ public class NewsDetailActivity extends RxBaseActivity {
 
 
     private String id;
-    private String imgsrc;
     private NewsDetail newsDetail;
+    private Bitmap bitmap;
 
 
     @Override
@@ -89,8 +95,11 @@ public class NewsDetailActivity extends RxBaseActivity {
     @Override
     public void initViews(Bundle savedInstanceState) {
 
-        id = (String) getIntent().getSerializableExtra(INTENT_NAME);
-        imgsrc = (String) getIntent().getSerializableExtra(INTENT_IMG);
+        Bundle bundle = getIntent().getExtras();
+
+        id = bundle.getString(INTENT_NAME);
+        bitmap = (Bitmap) bundle.getParcelable(INTENT_IMG);
+        mBgImage.setImageBitmap(bitmap);
 
         loadData();
 
@@ -123,20 +132,15 @@ public class NewsDetailActivity extends RxBaseActivity {
 
         int imgSize = newsDetail.getImg().size();
 
+        newsDetail.setBody(changeNewsBody(newsDetail.getImg(), newsDetail.getBody()));
+
         if (imgSize >= 2 && newsDetail.getBody() != null) {
-            mNewsBody.setText(Html.fromHtml(newsDetail.getBody(), new com.philipli.smartzone.util.URLImageGetter(mNewsBody, newsDetail.getBody(), imgSize), null));
+            mNewsBody.setText(Html.fromHtml(newsDetail.getBody(), new URLImageGetter(getApplicationContext(), mNewsBody, newsDetail.getImg()), null));
         } else {
             mNewsBody.setText(Html.fromHtml(newsDetail.getBody()));
         }
 
 
-        String imgUrl = newsDetail.getImg().isEmpty() ? imgsrc : newsDetail.getImg().get(0).getSrc();
-
-        Glide.with(this)
-                .load(imgUrl)
-                .apply(GlideUtil.getMeituRequestOptions())
-                .transition(withCrossFade(500))
-                .into(mBgImage);
 
 
     }
@@ -146,13 +150,41 @@ public class NewsDetailActivity extends RxBaseActivity {
         mNewsBody.setGravity(Gravity.CENTER);
     }
 
-    public static void start(Context context, String id, String imgsrc) {
+    public static void start(Context context, String id, ImageView imageView) {
 
         Intent intent = new Intent(context, NewsDetailActivity.class);
-        intent.putExtra(INTENT_NAME, id);
-        intent.putExtra(INTENT_IMG, imgsrc);
-        ActivityCompat.startActivity(context, intent, null);
+        Bundle bundle = new Bundle();
+        bundle.putString(INTENT_NAME, id);
+
+        Bitmap bitmap = BitmapUtil.drawable2Bitmap(imageView.getDrawable());
+        bundle.putParcelable(INTENT_IMG, bitmap);
+
+        intent.putExtras(bundle);
+
+        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) context, imageView, context.getString(R.string.anime_news_badger));
+        ActivityCompat.startActivity(context, intent, options.toBundle());
     }
 
+    private String changeNewsBody(List<NewsDetail.ImgBean> imgSrcs, String newsBody) {
+        for (int i = 0; i < imgSrcs.size(); i++) {
+            String oldChars = "<!--IMG#" + i + "-->";
+            String newChars;
+            if (i == 0) {
+                newChars = "";
+            } else {
+                newChars = "<img src=\"" + imgSrcs.get(i).getSrc() + "\" />";
+            }
+            newsBody = newsBody.replace(oldChars, newChars);
+
+        }
+        return newsBody;
+    }
+
+    @Override
+    protected void onDestroy() {
+        mBgImage.setImageBitmap(null);
+        BitmapUtil.bitmapRecycle(bitmap);
+        super.onDestroy();
+    }
 }
 

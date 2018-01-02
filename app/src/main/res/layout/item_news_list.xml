@@ -21,6 +21,7 @@
             android:layout_height="80dp"
             android:id="@+id/news_list_image"
             android:layout_margin="8dp"
+            android:transitionName="@string/anime_news_badger"
 
             />
 

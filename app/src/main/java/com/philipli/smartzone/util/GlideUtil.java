@@ -1,8 +1,15 @@
 package com.philipli.smartzone.util;
 
+import android.content.Context;
+
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.FutureTarget;
 import com.bumptech.glide.request.RequestOptions;
 import com.philipli.smartzone.R;
+
+import java.io.File;
+import java.util.concurrent.ExecutionException;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.glide.transformations.GrayscaleTransformation;
@@ -43,6 +50,20 @@ public class GlideUtil {
                 .dontAnimate();
 
         return requestOptions;
+    }
+
+    public static String getImagePath(String imgUrl, Context context) {
+        String path = null;
+        FutureTarget<File> future = Glide.with(context)
+                .download(imgUrl)
+                .submit();
+        try {
+            File cacheFile = future.get();
+            path = cacheFile.getAbsolutePath();
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+        return path;
     }
 
 }

@@ -14,6 +14,24 @@
 
     <style name="MainActivityColorTranslucentTheme" parent="@style/BaseAppTheme" />
 
+    <style name="NewsActivityWithAnimation" parent="@style/BaseAppTheme" >
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/news_shared_enter</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/news_shared_return</item>
+        <item name="android:windowEnterTransition">@transition/activity_enter</item>
+        <item name="android:windowReturnTransition">@transition/activity_exit</item>
+
+    </style>
+
+    <style name="BookActivityWithAnimation" parent="@style/BaseAppTheme" >
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowSharedElementEnterTransition">@transition/book_shared_enter</item>
+        <item name="android:windowSharedElementReturnTransition">@transition/book_shared_return</item>
+        <item name="android:windowEnterTransition">@transition/activity_enter</item>
+        <item name="android:windowReturnTransition">@transition/activity_exit</item>
+
+    </style>
+
     <!--titlebar 标题-->
     <style name="ToolBar.Title" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">18.0sp</item>

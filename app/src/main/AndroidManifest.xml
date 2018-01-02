@@ -39,12 +39,12 @@
         <activity
             android:name=".ui.books.BookDetailActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/MainActivityColorTranslucentTheme" />
+            android:theme="@style/BookActivityWithAnimation" />
 
         <activity
             android:name=".ui.news.NewsDetailActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/MainActivityColorTranslucentTheme" />
+            android:theme="@style/NewsActivityWithAnimation" />
 
         <activity
             android:name=".ui.meitu.MeituActivity"
@@ -58,6 +58,11 @@
 
         <activity
             android:name=".ui.AboutAuthorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MainActivityColorTranslucentTheme" />
+
+        <activity
+            android:name=".ui.QRCodeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MainActivityColorTranslucentTheme" />
 
