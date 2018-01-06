@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.philipli.smartzone.R;
 import com.philipli.smartzone.adapter.BookAdapter;
+import com.philipli.smartzone.adapter.GeneralAdapter;
 import com.philipli.smartzone.adapter.MeituAdapter;
 import com.philipli.smartzone.base.RxBaseFragment;
 import com.philipli.smartzone.bean.BooksBean;
@@ -132,13 +133,13 @@ public class GeneralMeituFragment extends RxBaseFragment {
             @Override
             public int getSpanSize(int position) {
                 switch (mMeituAdapter.getItemViewType(position)){
-                    case MeituAdapter.Meitu_HEADER : {
+                    case GeneralAdapter.HEADER : {
                         return 2;
                     }
-                    case MeituAdapter.Meitu_CONTENT: {
+                    case GeneralAdapter.CONTENT: {
                         return 1;
                     }
-                    case MeituAdapter.Meitu_FOOTER: {
+                    case GeneralAdapter.FOOTER: {
                         return 2;
                     }
                     default:
@@ -177,7 +178,7 @@ public class GeneralMeituFragment extends RxBaseFragment {
     }
 
     protected void finishTask() {
-        hideView();
+        mMeituAdapter.onNetworkWorked();
         mMeituAdapter.updateStatus(BookAdapter.LOAD_IDLE);
         mMeituAdapter.updateList(mList);
         mSwipeRefreshLayout.setRefreshing(false);
@@ -186,17 +187,11 @@ public class GeneralMeituFragment extends RxBaseFragment {
         mMeituAdapter.notifyDataSetChanged();
     }
 
-    private void hideView() {
-        mEmptyView.setVisibility(View.GONE);
-        mRecycleView.setVisibility(View.VISIBLE);
-    }
 
     private void initEmptyView() {
+
+        mMeituAdapter.onNetworkFailed();
         mSwipeRefreshLayout.setRefreshing(false);
-        mRecycleView.setVisibility(View.INVISIBLE);
-        mEmptyView.setVisibility(View.VISIBLE);
-        mEmptyView.setImage(R.drawable.ic_logo);
-        mEmptyView.setText("This is an empty page!");
     }
 
 }

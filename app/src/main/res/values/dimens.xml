@@ -43,6 +43,8 @@
     <dimen name="home_recommend_foot_button_height">35dp</dimen>
     <dimen name="home_recommend_foot_refresh_margin">7dp</dimen>
 
+    <dimen name="fab_margin">16dp</dimen>
+
     <dimen name="general_banner_height">126dp</dimen>
 
     <dimen name="home_recommend_foot_bangumi_layout_height">40dp</dimen>

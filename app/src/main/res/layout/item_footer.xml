@@ -17,10 +17,10 @@
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:id="@+id/book_name"
+        android:id="@+id/load_hint"
         android:layout_toRightOf="@id/progress_bar"
         android:maxLines="1"
-        android:text="@string/more_info"
+        android:text="@string/loading_now"
         android:textAlignment="center"
         android:layout_gravity="center_horizontal"
         android:textSize="13sp"

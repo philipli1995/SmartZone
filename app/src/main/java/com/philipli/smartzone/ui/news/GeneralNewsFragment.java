@@ -126,9 +126,6 @@ public class GeneralNewsFragment extends RxBaseFragment {
                 super.onScrolled(recyclerView, dx, dy);
                 lastVisibleItem = mLayoutManager.findLastVisibleItemPosition();
 
-                /**StaggeredGridLayoutManager*/
-//                int[] into = new int[(mLayoutManager).getSpanCount()];
-//                lastVisibleItem = findMax(mLayoutManager.findLastVisibleItemPositions(into));
             }
         });
 
@@ -182,26 +179,18 @@ public class GeneralNewsFragment extends RxBaseFragment {
     }
 
     protected void finishTask() {
-        hideView();
+        mNewsAdapter.onNetworkWorked();
         mNewsAdapter.updateStatus(NewsAdapter.LOAD_IDLE);
         mNewsAdapter.updateList(mList);
         mSwipeRefreshLayout.setRefreshing(false);
         mNewsAdapter.notifyDataSetChanged();
     }
 
-    private void hideView() {
-        mEmptyView.setVisibility(View.GONE);
-        mRecycleView.setVisibility(View.VISIBLE);
-    }
 
     private void initEmptyView() {
 
-
+        mNewsAdapter.onNetworkFailed();
         mSwipeRefreshLayout.setRefreshing(false);
-        mRecycleView.setVisibility(View.INVISIBLE);
-        mEmptyView.setVisibility(View.VISIBLE);
-        mEmptyView.setImage(R.drawable.ic_logo);
-        mEmptyView.setText("This is an empty page!");
     }
 
 }

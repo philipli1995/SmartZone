@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -25,16 +26,7 @@ import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOption
  * Created by philipli on 2017/12/6.
  */
 
-public class BookAdapter extends RecyclerView.Adapter {
-
-    public final static int BOOK_HEADER = 0;
-    public final static int BOOK_CONTENT = 1;
-    public final static int BOOK_FOOTER = 2;
-
-    public final static int LOAD_IDLE = 0;
-    public final static int LOAD_LOADING = 1;
-    public final static int LOAD_PULL_UP = 2;
-    public final static int LOAD_END = 3;
+public class BookAdapter extends GeneralAdapter {
 
 
     private int status = 0;
@@ -43,17 +35,9 @@ public class BookAdapter extends RecyclerView.Adapter {
     private List<BooksBean.BookBean> mList = new ArrayList<>();
 
 
-
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        switch (viewType) {
-            case BOOK_CONTENT:
-                return new BookViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_book_card, parent, false));
-            case BOOK_FOOTER:
-                return new FooterViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_footer, parent, false));
-            default:
-                throw new IllegalArgumentException("Invalid viewType");
-        }
+    public RecyclerView.ViewHolder getChildViewHolder(ViewGroup parent) {
+        return new BookViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_book_card, parent, false));
     }
 
     public BookAdapter(Context context, List<BooksBean.BookBean> list) {
@@ -68,8 +52,7 @@ public class BookAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
-
+        super.onBindViewHolder(holder, position);
         if (holder instanceof BookViewHolder) {
             if (!mList.isEmpty()) {
                 BookViewHolder bookViewHolder = (BookViewHolder) holder;
@@ -79,40 +62,11 @@ public class BookAdapter extends RecyclerView.Adapter {
                 bookViewHolder.setOnClickListener(mList.get(position).getId());
             }
         }
-        else if (holder instanceof FooterViewHolder) {
-
-        }
-    }
-
-    public int getStatus() {
-        return status;
     }
 
     @Override
     public int getItemCount() {
         return mList.size() + 1;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if (position + 1== getItemCount()) {
-            return BOOK_FOOTER;
-        }
-        else {
-            return BOOK_CONTENT;
-        }
-    }
-
-    public void updateStatus(int status) {
-        this.status = status;
-        this.notifyDataSetChanged();
-    }
-
-    private class FooterViewHolder extends RecyclerView.ViewHolder {
-
-        public FooterViewHolder(View itemView) {
-            super(itemView);
-        }
     }
 
 

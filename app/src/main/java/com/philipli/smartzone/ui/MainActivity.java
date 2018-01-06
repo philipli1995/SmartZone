@@ -8,12 +8,15 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.Toast;
 
 import com.philipli.smartzone.R;
+import com.philipli.smartzone.app.SmartZoneApp;
 import com.philipli.smartzone.base.RxBaseActivity;
 import com.philipli.smartzone.ui.home.HomeFragment;
 
@@ -30,6 +33,8 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
     Fragment[] fragments;
 
     HomeFragment mHomePageFragment;
+
+    private long exitTime;
 
     @Override
     public int getLayoutId() {
@@ -106,4 +111,34 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
 
         return false;
     }
+
+
+    /**
+     * 监听back键处理DrawerLayout和SearchView
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (mDrawerLayout.isDrawerOpen(mDrawerLayout.getChildAt(1))) {
+                mDrawerLayout.closeDrawers();
+            } else {
+                exitApp();
+            }
+        }
+        return true;
+    }
+
+
+    /**
+     * 双击退出App
+     */
+    private void exitApp() {
+        if (System.currentTimeMillis() - exitTime > 2000) {
+            Toast.makeText(SmartZoneApp.getInstance(), "再按一次退出", Toast.LENGTH_SHORT).show();
+            exitTime = System.currentTimeMillis();
+        } else {
+            finish();
+        }
+    }
+
 }

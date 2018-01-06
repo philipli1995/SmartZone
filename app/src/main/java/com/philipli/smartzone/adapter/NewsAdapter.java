@@ -28,35 +28,14 @@ import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOption
  * Created by philipli on 2017/12/6.
  */
 
-public class NewsAdapter extends RecyclerView.Adapter {
-
-    public final static int NEWS_HEADER = 0;
-    public final static int NEWS_CONTENT = 1;
-    public final static int NEWS_FOOTER = 2;
-
-    public final static int LOAD_IDLE = 0;
-    public final static int LOAD_LOADING = 1;
-    public final static int LOAD_PULL_UP = 2;
-    public final static int LOAD_END = 3;
-
-
-    private int status = 0;
+public class NewsAdapter extends GeneralAdapter {
 
     private Context mContext;
     private List<NewsSummary> mList = new ArrayList<>();
 
-
-
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        switch (viewType) {
-            case NEWS_CONTENT:
-                return new NewsViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_news_list, parent, false));
-            case NEWS_FOOTER:
-                return new FooterViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_footer, parent, false));
-            default:
-                throw new IllegalArgumentException("Invalid viewType");
-        }
+    public RecyclerView.ViewHolder getChildViewHolder(ViewGroup parent) {
+        return new NewsViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_news_list, parent, false));
     }
 
     public NewsAdapter(Context context, List<NewsSummary> list) {
@@ -71,8 +50,7 @@ public class NewsAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
-
+        super.onBindViewHolder(holder, position);
         if (holder instanceof NewsViewHolder) {
             if (!mList.isEmpty()) {
                 NewsViewHolder newsViewHolder = (NewsViewHolder) holder;
@@ -86,40 +64,10 @@ public class NewsAdapter extends RecyclerView.Adapter {
 
             }
         }
-        else if (holder instanceof FooterViewHolder) {
-
-        }
     }
-
-    public int getStatus() {
-        return status;
-    }
-
     @Override
     public int getItemCount() {
         return mList.size() + 1;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if (position + 1== getItemCount()) {
-            return NEWS_FOOTER;
-        }
-        else {
-            return NEWS_CONTENT;
-        }
-    }
-
-    public void updateStatus(int status) {
-        this.status = status;
-        this.notifyDataSetChanged();
-    }
-
-    private class FooterViewHolder extends RecyclerView.ViewHolder {
-
-        public FooterViewHolder(View itemView) {
-            super(itemView);
-        }
     }
 
 

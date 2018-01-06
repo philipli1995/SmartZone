@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.philipli.smartzone.R;
 import com.philipli.smartzone.adapter.BookAdapter;
+import com.philipli.smartzone.adapter.GeneralAdapter;
 import com.philipli.smartzone.base.RxBaseFragment;
 import com.philipli.smartzone.bean.BooksBean;
 import com.philipli.smartzone.network.RetrofitConfig;
@@ -136,13 +137,13 @@ public class GeneralBookFragment extends RxBaseFragment {
             @Override
             public int getSpanSize(int position) {
                 switch (mBookAdapter.getItemViewType(position)){
-                    case BookAdapter.BOOK_HEADER : {
+                    case GeneralAdapter.HEADER : {
                         return 3;
                     }
-                    case BookAdapter.BOOK_CONTENT: {
+                    case GeneralAdapter.CONTENT: {
                         return 1;
                     }
-                    case BookAdapter.BOOK_FOOTER: {
+                    case GeneralAdapter.FOOTER: {
                         return 3;
                     }
                     default:
@@ -169,7 +170,7 @@ public class GeneralBookFragment extends RxBaseFragment {
                         mList.addAll(booksBean.getBooks());
                         finishTask();
                     }
-                }, throwable -> initEmptyView());
+                }, throwable -> initFailedView());
     }
 
     private void clearAll() {
@@ -177,7 +178,7 @@ public class GeneralBookFragment extends RxBaseFragment {
     }
 
     protected void finishTask() {
-        hideView();
+        mBookAdapter.onNetworkWorked();
         mBookAdapter.updateStatus(BookAdapter.LOAD_IDLE);
         mBookAdapter.updateList(mList);
         mSwipeRefreshLayout.setRefreshing(false);
@@ -186,17 +187,9 @@ public class GeneralBookFragment extends RxBaseFragment {
         mBookAdapter.notifyDataSetChanged();
     }
 
-    private void hideView() {
-        mEmptyView.setVisibility(View.GONE);
-        mRecycleView.setVisibility(View.VISIBLE);
-    }
-
-    private void initEmptyView() {
+    private void initFailedView() {
         mSwipeRefreshLayout.setRefreshing(false);
-        mRecycleView.setVisibility(View.INVISIBLE);
-        mEmptyView.setVisibility(View.VISIBLE);
-        mEmptyView.setImage(R.drawable.ic_logo);
-        mEmptyView.setText("This is an empty page!");
+        mBookAdapter.onNetworkFailed();
     }
 
 }

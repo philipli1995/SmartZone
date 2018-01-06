@@ -25,35 +25,15 @@ import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOption
  * Created by philipli on 2017/12/6.
  */
 
-public class MeituAdapter extends RecyclerView.Adapter {
-
-    public final static int Meitu_HEADER = 0;
-    public final static int Meitu_CONTENT = 1;
-    public final static int Meitu_FOOTER = 2;
-
-    public final static int LOAD_IDLE = 0;
-    public final static int LOAD_LOADING = 1;
-    public final static int LOAD_PULL_UP = 2;
-    public final static int LOAD_END = 3;
-
-
-    private int status = 0;
+public class MeituAdapter extends GeneralAdapter {
 
     private Context mContext;
     private ArrayList<String> mList = new ArrayList<>();
 
 
-
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        switch (viewType) {
-            case Meitu_CONTENT:
-                return new MeituViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_meitu, parent, false));
-            case Meitu_FOOTER:
-                return new FooterViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_footer, parent, false));
-            default:
-                throw new IllegalArgumentException("Invalid viewType");
-        }
+    public RecyclerView.ViewHolder getChildViewHolder(ViewGroup parent) {
+        return new MeituViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_meitu, parent, false));
     }
 
     public MeituAdapter(Context context, List<String> list) {
@@ -68,8 +48,7 @@ public class MeituAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-
-
+        super.onBindViewHolder(holder, position);
         if (holder instanceof MeituViewHolder) {
             if (!mList.isEmpty()) {
                 MeituViewHolder meituViewHolder = (MeituViewHolder) holder;
@@ -77,40 +56,11 @@ public class MeituAdapter extends RecyclerView.Adapter {
                 meituViewHolder.setOnClickListener(position, mList);
             }
         }
-        else if (holder instanceof FooterViewHolder) {
-
-        }
-    }
-
-    public int getStatus() {
-        return status;
     }
 
     @Override
     public int getItemCount() {
         return mList.size() + 1;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if (position + 1== getItemCount()) {
-            return Meitu_FOOTER;
-        }
-        else {
-            return Meitu_CONTENT;
-        }
-    }
-
-    public void updateStatus(int status) {
-        this.status = status;
-        this.notifyDataSetChanged();
-    }
-
-    private class FooterViewHolder extends RecyclerView.ViewHolder {
-
-        public FooterViewHolder(View itemView) {
-            super(itemView);
-        }
     }
 
 

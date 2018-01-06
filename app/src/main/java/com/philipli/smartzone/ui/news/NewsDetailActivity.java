@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.ActionBar;
@@ -31,6 +32,7 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
@@ -55,6 +57,8 @@ public class NewsDetailActivity extends RxBaseActivity {
     TextView mNewsSource;
     @BindView(R.id.news_detail_body)
     TextView mNewsBody;
+    @BindView(R.id.fab)
+    FloatingActionButton fab;
 
 
 
@@ -129,6 +133,7 @@ public class NewsDetailActivity extends RxBaseActivity {
 
         mNewsSource.setText(newsDetail.getSource());
         mToolBar.setTitle(newsDetail.getTitle());
+        fab.setVisibility(View.VISIBLE);
 
         int imgSize = newsDetail.getImg().size();
 
@@ -148,6 +153,18 @@ public class NewsDetailActivity extends RxBaseActivity {
     private void initEmptyView() {
         mNewsBody.setText("抱歉，由于网络原因本条新闻无法观看...(ಥ_ಥ)");
         mNewsBody.setGravity(Gravity.CENTER);
+    }
+
+    @OnClick(R.id.fab)
+    public void shareAction(View view) {
+        if (newsDetail == null) {
+            return;
+        }
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share));
+        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_contents, newsDetail.getTitle(), newsDetail.getShareLink()));
+        startActivity(Intent.createChooser(intent, getTitle()));
     }
 
     public static void start(Context context, String id, ImageView imageView) {
