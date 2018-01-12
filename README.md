@@ -68,7 +68,8 @@ If you have any questions, please write to [the issue][11] of making you don't u
 
   - [新增]1.在相同的标签栏点击将返回页面最顶部
   - [新增]2.新闻栏目新增多个可选栏目，支持个性化自定义栏目
-  - [优化]3.部分代码优化
+  - [新增]3.新闻和书籍的详细信息支持长按复制
+  - [优化]4.部分代码优化
 
 
 
