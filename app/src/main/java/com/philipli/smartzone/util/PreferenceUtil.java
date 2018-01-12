@@ -23,4 +23,27 @@ public class PreferenceUtil {
         e.putBoolean(key, value);
         e.apply();
     }
+
+    public static void putInt(String key, int value) {
+        SharedPreferences s = PreferenceManager.getDefaultSharedPreferences(SmartZoneApp.getInstance());
+        SharedPreferences.Editor e = s.edit();
+        e.putInt(key, value);
+        e.apply();
+    }
+
+    public static int getInt(String key, int defValue) {
+        return PreferenceManager.getDefaultSharedPreferences(SmartZoneApp.getInstance()).getInt(key, defValue);
+    }
+
+    public static String getString(String key, String defValue) {
+        return PreferenceManager.getDefaultSharedPreferences(SmartZoneApp.getInstance()).getString(key, defValue);
+    }
+
+    public static void putString(String key, String value) {
+        SharedPreferences s = PreferenceManager.getDefaultSharedPreferences(SmartZoneApp.getInstance());
+        SharedPreferences.Editor e = s.edit();
+        e.putString(key, value);
+        e.apply();
+    }
+
 }

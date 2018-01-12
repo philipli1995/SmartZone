@@ -1,12 +1,14 @@
-package com.philipli.smartzone.ui.home;
+package com.philipli.smartzone.ui.books;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import com.flyco.tablayout.SlidingTabLayout;
+import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.philipli.smartzone.R;
 import com.philipli.smartzone.adapter.BookPagerAdapter;
 import com.philipli.smartzone.base.RxBaseFragment;
+import com.philipli.smartzone.ui.books.GeneralBookFragment;
 
 import butterknife.BindView;
 
@@ -44,6 +46,17 @@ public class OverviewBookFragment extends RxBaseFragment {
         mViewPager.setAdapter(adapter);
         mViewPager.setCurrentItem(0);
         mSlidingTabs.setViewPager(mViewPager);
+        mSlidingTabs.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelect(int position) {
+
+            }
+
+            @Override
+            public void onTabReselect(int position) {
+                ((GeneralBookFragment)adapter.getItem(position)).scrollUp();
+            }
+        });
 
     }
 

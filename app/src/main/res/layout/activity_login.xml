@@ -134,7 +134,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/default_medium_text_size"
 
-        ></Button>
+       />
 
 
 </LinearLayout>

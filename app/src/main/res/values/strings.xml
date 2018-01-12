@@ -21,17 +21,71 @@
 
     <string-array name="news_tabs">
         <!--新闻名字和id、type一一对应-->
-        <item>@string/news_headline</item>
-        <item>@string/news_tech</item>
-        <item>@string/news_eco</item>
+        <item>头条</item>
+        <item>科技</item>
+        <item>财经</item>
+        <item>军事</item>
+        <item>体育</item>
+        <item>房产</item>
+        <item>足球</item>
+        <item>娱乐</item>
+        <item>电影</item>
+        <item>汽车</item>
+        <item>笑话</item>
+        <item>游戏</item>
+        <item>时尚</item>
+        <item>情感</item>
+        <item>精选</item>
+        <item>电台</item>
+        <item>NBA</item>
+        <item>数码</item>
+        <item>移动</item>
+        <item>彩票</item>
+        <item>教育</item>
+        <item>论坛</item>
+        <item>旅游</item>
+        <item>手机</item>
+        <item>博客</item>
+        <item>社会</item>
+        <item>家居</item>
+        <item>暴雪</item>
+        <item>亲子</item>
+        <item>CBA</item>
+        <item>消息</item>
     </string-array>
 
     <string-array name="news_api_id">
-
         <item>T1348647909107</item>
         <item>T1348649580692</item>
         <item>T1348648756099</item>
-
+        <item>T1348648141035</item>
+        <item>T1348649079062</item>
+        <item>5YyX5Lqs</item>
+        <item>T1399700447917</item>
+        <item>T1348648517839</item>
+        <item>T1348648650048</item>
+        <item>T1348654060988</item>
+        <item>T1350383429665</item>
+        <item>T1348654151579</item>
+        <item>T1348650593803</item>
+        <item>T1348650839000</item>
+        <item>T1370583240249</item>
+        <item>T1379038288239</item>
+        <item>T1348649145984</item>
+        <item>T1348649776727</item>
+        <item>T1351233117091</item>
+        <item>T1356600029035</item>
+        <item>T1348654225495</item>
+        <item>T1349837670307</item>
+        <item>T1348654204705</item>
+        <item>T1348649654285</item>
+        <item>T1349837698345</item>
+        <item>T1348648037603</item>
+        <item>T1348654105308</item>
+        <item>T1397016069906</item>
+        <item>T1397116135282</item>
+        <item>T1348649475931</item>
+        <item>T1371543208049</item>
     </string-array>
 
     <string-array name="news_api_type">
@@ -39,17 +93,41 @@
         <item>headline</item>
         <item>list</item>
         <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>house</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
+        <item>list</item>
 
     </string-array>
-
-
-
-
-
 
     <string name="news_headline">头条</string>
     <string name="news_tech">科技</string>
     <string name="news_eco">财经</string>
+
 
 
     <string name="home_book">看书</string>
@@ -85,7 +163,13 @@
     <string name="download_qr">分享给小伙伴一起下载吧~</string>
 
 
-    <string name="current_version">V1.1.2</string>
+    <string name="setup_channel_hint">点击加入或取消订阅频道</string>
+    <string name="setup_my_channel">我的频道</string>
+    <string name="setup_all_channel">所有频道</string>
+    <string name="channel_save">保存</string>
+
+
+    <string name="current_version">V1.1.5</string>
 
 
     <string name="download_url" translatable="false">https://fir.im/SmartZone</string>
@@ -93,9 +177,6 @@
 
     <string name="loading_now" >正在加载中...</string>
     <string name="loading_failed" >抱歉，无法加载更多了/(ㄒoㄒ)/~~</string>
-
-
-
     <string name="login_level">LV5</string>
     <string name="login_name">Philipli1995</string>
     <string name="login_vip">正式会员</string>
@@ -104,115 +185,5 @@
 
     <string name="share">分享</string>
     <string name="share_contents">来自「SmartZone」的分享：%1$s %2$s</string>
-
-    <string name="info_play_times_format">%d</string>
-    <string name="info_reviews_format">%d</string>
-    <string name="hotbitmapgg">hotBitmapGG</string>
-    <string name="github_link">https://github.com/HotBitmapGG</string>
-    <string name="sina_weibo_link">新浪微博:http://m.weibo.cn/users/3223089177/qq</string>
-    <string name="jianshu_link">简书:http://www.jianshu.com/notebooks/5181955/latest</string>
-    <string name="add_follow">+关注</string>
-    <string name="login">登录</string>
-    <string name="all_start">全部开始</string>
-    <string name="edit">编辑</string>
-    <string name="sp_play">播放:</string>
-    <string name="sp_total_of">共:</string>
-    <string name="sp_follow">关注:</string>
-    <string name="sp_collection">收藏:</string>
-    <string name="sp_introduction">专题简介:</string>
-    <string name="sp_videos">专题剧集</string>
-    <string name="discover_search_hint">搜索视频 番剧 up主或av号</string>
-    <string name="everyone_in_the_search">大家都在搜</string>
-    <string name="interest_in_circle">兴趣圈</string>
-    <string name="topic_center">话题中心</string>
-    <string name="original_rank">原创排行榜</string>
-    <string name="all_rank">全区排行榜</string>
-    <string name="shop">周边商城</string>
-    <string name="game_center">游戏中心</string>
-    <string name="check_update">检查更新</string>
-    <string name="logout">退出登录</string>
-    <string name="introduction">简介</string>
-    <string name="coin">投硬币</string>
-    <string name="collection">收藏</string>
-    <string name="bangumi_follow">追番</string>
-    <string name="cache">缓存</string>
-    <string name="charging">请赐予我电量吧 !</string>
-    <string name="charg">充电</string>
-    <string name="more_charging">更多电量,更多灵感哟  o(*≧▽≦)ツ</string>
-    <string name="video_about">视频相关</string>
-    <string name="more">更多</string>
-    <string name="download">下载</string>
-    <string name="to_them">追番</string>
-    <string name="time_line">放送表</string>
-    <string name="index">索引</string>
-    <string name="bangumi_recommend">番剧推荐</string>
-    <string name="new_bangumi_serial">新番连载</string>
-    <string name="season_new_bangumi">7月新番</string>
-    <string name="season_list">分季列表</string>
-    <string name="more_new_bangumi_serial">所有连载</string>
-    <string name="load_more">加载中…</string>
-    <string name="search_hint">搜索视频,番剧,up主或av号</string>
-    <string name="danmaku_switch">弹幕开</string>
-    <string name="play_immediately">立即播放</string>
-    <string name="dynamic">动态</string>
-    <string name="not_watch">尚未观看</string>
-    <string name="selection">选集</string>
-    <string name="please_contract_me">请承包我吧</string>
-    <string name="have_been_contracting_out_of_me">已有383人承包了这部番</string>
-    <string name="contract">承包</string>
-    <string name="contract_text">等34人七日内承包了这部番</string>
-    <string name="look_top_list">查看榜单</string>
-    <string name="commend">评论</string>
-    <string name="more_commend">更多评论</string>
-    <string name="more_commend_arrow">更多评论 >></string>
-    <string name="members">正式会员</string>
-    <string name="more_hot_comment">更多热门评论 >></string>
-    <string name="fans">粉丝</string>
-    <string name="direct_messages">私信</string>
-    <string name="live_message">TA现在还没有直播，去订阅TA的直播</string>
-    <string name="go_to_look">进去看看</string>
-    <string name="all_contribute">全部投稿</string>
-    <string name="coins_video">最近投硬币的视频</string>
-    <string name="ta_favorites">TA的收藏夹</string>
-    <string name="ta_chase_bangumi">TA的追番</string>
-    <string name="ta_quanzi">TA的圈子</string>
-    <string name="ta_play_game">TA玩的游戏</string>
-
-
-    <string name="video_init">初始化播放器…</string>
-    <string name="video_loading">加载中…</string>
-    <string name="video_error_title">Cannot play video</string>
-    <string name="video_error_text_invalid_progressive_playback">Sorry, this video is not valid for streaming tothis device.</string>
-    <string name="video_error_text_unknown">Sorry, this video cannot be played.</string>
-    <string name="video_error_button">OK</string>
-
-
-    <!-- Navigation Items -->
-    <string name="item_group">关注的人</string>
-    <string name="item_tracker">我的钱包</string>
-    <string name="item_downloaded">离线缓存</string>
-    <string name="item_settings">设置与帮助</string>
-    <string name="item_theme">主题选择</string>
-    <string name="item_app">应用推荐</string>
-    <string name="item_vip">我的大会员</string>
-
-
-    <!--App 介绍-->
-    <string name="about_user_head_layout">硬币: 47</string>
-    <string name="about_introduce">「哔哩哔哩」</string>
-    <string name="about_menu_action_share">分享</string>
-    <string name="about_developers">关于我</string>
-    <string name="about">关于哔哩哔哩</string>
-    <string name="about_version">V1.0</string>
-
-
-    <!--哔哩哔哩-->
-    <string name="section_recommend">推荐</string>
-    <string name="section_live">直播</string>
-    <string name="section_focus">关注</string>
-    <string name="section_more">分区</string>
-    <string name="section_bangumi">番剧</string>
-    <string name="section_discover">发现</string>
-    <string name="level_text">LV2</string>
 
 </resources>

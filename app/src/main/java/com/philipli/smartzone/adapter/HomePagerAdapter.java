@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.philipli.smartzone.R;
 import com.philipli.smartzone.test.SimpleFragment;
 import com.philipli.smartzone.ui.books.GeneralBookFragment;
-import com.philipli.smartzone.ui.home.OverviewBookFragment;
+import com.philipli.smartzone.ui.books.OverviewBookFragment;
 import com.philipli.smartzone.ui.meitu.GeneralMeituFragment;
 import com.philipli.smartzone.ui.news.OverviewNewsFragment;
 

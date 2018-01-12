@@ -12,6 +12,9 @@ public class ConstantUtil {
     public static final String STYLE_PIC = "gl_pic";
 
 
+    public static final String CHANNEL_KEY = "channel";
+
+
 
 
 }

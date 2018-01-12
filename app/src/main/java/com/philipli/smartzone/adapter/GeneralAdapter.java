@@ -73,7 +73,7 @@ public abstract class GeneralAdapter extends RecyclerView.Adapter {
             return;
         }
         viewHolder.setProgressBarVisibility(true);
-        viewHolder.setText(R.string.load_more);
+        viewHolder.setText(R.string.loading_now);
     }
 
 

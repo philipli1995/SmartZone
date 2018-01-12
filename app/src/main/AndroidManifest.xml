@@ -66,6 +66,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/MainActivityColorTranslucentTheme" />
 
+        <activity
+            android:name=".ui.news.ChannelSetupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MainActivityColorTranslucentTheme" />
+
     </application>
 
 </manifest>

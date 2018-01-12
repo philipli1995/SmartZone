@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="enterAlways|scroll"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:theme="@style/ToolbarStyle"
+            />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/setup_channel_hint"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setup_my_channel"
+        android:textSize="20sp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/setup_my_channel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setup_all_channel"
+        android:textSize="20sp"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/setup_all_channel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+    <Button
+        android:id="@+id/channel_save_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_general_margin"
+        android:layout_marginRight="@dimen/default_general_margin"
+        android:layout_marginBottom="@dimen/default_general_margin"
+        android:layout_marginTop="@dimen/default_long_margin"
+        android:background="@drawable/corner_btn"
+        android:gravity="center"
+        android:text="@string/channel_save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/default_medium_text_size"
+
+        />
+
+
+
+</LinearLayout>

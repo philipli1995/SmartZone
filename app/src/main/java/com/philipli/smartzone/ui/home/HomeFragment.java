@@ -14,6 +14,7 @@ import com.philipli.smartzone.adapter.BookPagerAdapter;
 import com.philipli.smartzone.adapter.HomePagerAdapter;
 import com.philipli.smartzone.base.RxBaseFragment;
 import com.philipli.smartzone.ui.MainActivity;
+import com.philipli.smartzone.ui.meitu.GeneralMeituFragment;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -43,6 +44,8 @@ public class HomeFragment extends RxBaseFragment {
     private static final int MM_PAGE = 2;
 
     private int status = 0;
+
+    private HomePagerAdapter adapter;
 
 
     public static HomeFragment getInstance() {
@@ -96,7 +99,10 @@ public class HomeFragment extends RxBaseFragment {
                 mViewPager.setCurrentItem(0);
                 break;
             case R.id.mm_btn:
-                if (status == MM_PAGE) return;
+                if (status == MM_PAGE) {
+                    ((GeneralMeituFragment)adapter.getItem(1)).scrollUp();
+                    return;
+                }
                 mMmBtn.setSelected(true);
                 mBookBtn.setSelected(false);
                 mNewsBnt.setSelected(false);
@@ -118,7 +124,7 @@ public class HomeFragment extends RxBaseFragment {
 
 
     private void initViewPager() {
-        HomePagerAdapter adapter = new HomePagerAdapter(getChildFragmentManager(), getApplicationContext());
+        adapter = new HomePagerAdapter(getChildFragmentManager(), getApplicationContext());
         mViewPager.setOffscreenPageLimit(3);
         mViewPager.setAdapter(adapter);
         mViewPager.setCurrentItem(0);

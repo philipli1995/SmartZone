@@ -38,8 +38,6 @@ public class GeneralMeituFragment extends RxBaseFragment {
     SwipeRefreshLayout mSwipeRefreshLayout;
     @BindView(R.id.recycle)
     RecyclerView mRecycleView;
-    @BindView(R.id.empty_view)
-    CustomEmptyView mEmptyView;
     private GridLayoutManager mLayoutManager;
     private MeituAdapter mMeituAdapter;
 
@@ -186,6 +184,11 @@ public class GeneralMeituFragment extends RxBaseFragment {
 //        mRecycleView.setAdapter(mBookAdapter);
         mMeituAdapter.notifyDataSetChanged();
     }
+
+    public void scrollUp() {
+        mRecycleView.smoothScrollToPosition(0);
+    }
+
 
 
     private void initEmptyView() {

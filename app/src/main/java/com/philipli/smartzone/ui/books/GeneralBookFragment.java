@@ -35,8 +35,6 @@ public class GeneralBookFragment extends RxBaseFragment {
     SwipeRefreshLayout mSwipeRefreshLayout;
     @BindView(R.id.recycle)
     RecyclerView mRecycleView;
-    @BindView(R.id.empty_view)
-    CustomEmptyView mEmptyView;
     private GridLayoutManager mLayoutManager;
     private BookAdapter mBookAdapter;
 
@@ -191,5 +189,10 @@ public class GeneralBookFragment extends RxBaseFragment {
         mSwipeRefreshLayout.setRefreshing(false);
         mBookAdapter.onNetworkFailed();
     }
+
+    public void scrollUp() {
+        mRecycleView.smoothScrollToPosition(0);
+    }
+
 
 }

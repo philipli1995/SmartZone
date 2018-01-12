@@ -51,8 +51,6 @@ public class GeneralNewsFragment extends RxBaseFragment {
     SwipeRefreshLayout mSwipeRefreshLayout;
     @BindView(R.id.recycle)
     RecyclerView mRecycleView;
-    @BindView(R.id.empty_view)
-    CustomEmptyView mEmptyView;
 
     NewsAdapter mNewsAdapter;
     LinearLayoutManager mLayoutManager;
@@ -184,6 +182,10 @@ public class GeneralNewsFragment extends RxBaseFragment {
         mNewsAdapter.updateList(mList);
         mSwipeRefreshLayout.setRefreshing(false);
         mNewsAdapter.notifyDataSetChanged();
+    }
+
+    public void scrollUp() {
+        mRecycleView.smoothScrollToPosition(0);
     }
 
 

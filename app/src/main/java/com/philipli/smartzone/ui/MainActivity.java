@@ -128,6 +128,18 @@ public class MainActivity extends RxBaseActivity implements NavigationView.OnNav
         return true;
     }
 
+    public void reloadFragment() {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .remove(mHomePageFragment)
+                .commit();
+
+        initFragments();
+
+
+
+    }
+
 
     /**
      * 双击退出App

@@ -15,9 +15,9 @@ An Android client using Gank.Io， douban API and netease news. The reading clas
 
 
 <img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_book_list.jpg"></img>
-<img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_download.jpg"></img>
 <img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_news.jpg"></img>
 <img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_news_list.jpg"></img>
+<img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_channel.jpg"></img>
 <img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_nav_bar.jpg"></img>
 <img width="30%"  src="https://github.com/philipli1995/SmartZone/blob/master/image/page_meizi.jpg"></img>
 
@@ -63,7 +63,13 @@ If you have any questions, please write to [the issue][11] of making you don't u
   - [修复]3.修复了下拉栏加载不出来进入空白页的异常
   - [优化]4.部分代码优化
 
-　　
+
+#### V1.1.5（1-11）
+
+  - [新增]1.在相同的标签栏点击将返回页面最顶部
+  - [新增]2.新闻栏目新增多个可选栏目，支持个性化自定义栏目
+  - [优化]3.部分代码优化
+
 
 
 
